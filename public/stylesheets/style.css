@@ -1,4 +1,18 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+
+.glyphicon-thumbs-up {
+	cursor: pointer;
+}
+
+.titleLink {
+	font-size: 20px;
+	margin-left: 10px;
+}
+
+.postForm {
+	margin-top: 30px;
+}
+
+
