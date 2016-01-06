@@ -54,7 +54,7 @@ app.controller('MainController', ['$scope', 'posts', function($scope, posts){
 
 app.controller('PostController', ['$scope','$stateParams', 'posts', function($scope, $stateParams, posts){
 	// $scope.post = posts.posts[$stateParams.id];
-	window.posts = posts.posts
+	
 	$scope.post = posts.posts.find(function(post){
 		return post.id == $stateParams.id
 	})
@@ -63,32 +63,14 @@ app.controller('PostController', ['$scope','$stateParams', 'posts', function($sc
 	$scope.addComment = function() {
 		if($scope.body === '') { return; }
 		$scope.post.comments.push({
-
+			body: $scope.body,
+			author: 'user',
+			upvotes: 0
 		});
+		$scope.body = '';
 	}
 }]);
 
-
-/**
- * Find looks at each element in the array and tests it against the testFun
- * if it passes the test it returns the Element and stops looking for other Elements
- * if all the elements fail the test return undefined
- * @param data {Array}
- * @param testFunc {Function(Element, index, data):Boolean} 
- */
-function find(data, testFunc) {
-	var result = undefined;
-	var stop = false;
-	
-	for(var i = 0; i < data.length && !stop; i++) {
-		if( testFunc(data[i], i, data) ) {
-			result = data[i]
-			stop = true
-		} 
-	}
-
-	return result;
-} 
 
 
 

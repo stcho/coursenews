@@ -39,7 +39,7 @@
 	    </div>
 	    
 	    <form class="postForm" ng-submit="addPost()">
-	    	<h3>Add new posts</h3>
+	    	<h3>Add a new post</h3>
 	    	<div class="form-group">
 	    		<input class="form-control" type="text" placeholder="Title" ng-model="title"></input>
 	    	</div>
@@ -67,6 +67,15 @@
 				{{comment.upvotes}} - by {{comment.author}}
 				<span class="commentBody">{{comment.body}}</span>
 			</div>
+
+			<form class="commentForm" ng-submit="addComment()">
+				<h3>Add a new comment</h3>
+
+				<div class="form-group">
+					<input class="form-control" type="text" placeholder="Comment" ng-model="body"></input>
+				</div>
+				<button type="submit" class="btn btn-primary">Post</button>
+			</form>
 	  </script>
 
   </body>
